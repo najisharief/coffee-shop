@@ -10,7 +10,19 @@ var coffeeShop = {
 
   makeDrink: function (drinkType) {
     // TODO: Finish this method
+    if ( drinkType in this.drinkRequirements){
+        if ( this.beans >= this.drinkRequirements[drinkType]){
+      this.beans = this.beans - this.drinkRequirements[drinkType];
+      // alert("here you have your drink and your beans are: "+ beans);
+    }
+      else {
+        alert("you have no beans");
+      }
   }
+  else {
+    alert("sorry we dont make " + drinkType);
+  }
+}
 }
 
 coffeeShop.makeDrink("latte");
